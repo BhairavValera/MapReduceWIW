@@ -5,7 +5,7 @@ import pandas as pd
 def reduce():
     '''
     user_map maps user id to another hash table of paths
-    the hash table of paths maps a path string to it's length
+    the hash table of paths maps a path string to its length
     every time we see a new user id, we create a new path map for it and put the current path in along with its length
     if the user id is found but the path is not, then create a new path with that length, else just increment its length accordingly
     '''
