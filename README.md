@@ -18,4 +18,5 @@ Then, to run the map-shuffle-reduce job, which will create the output `result.cs
 
 `python3 mapper.py | sort -k1,1 | python3 reducer.py`
 
+`|` will pipe the standard output of the command preceding it to the next command as input. 
 `result.csv` is the file which contains per-user format data i.e. each row is a different user and the columns represent the time spent on each of the pages.
