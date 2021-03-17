@@ -14,7 +14,7 @@ Next, run
 
 which will create a `data_sources` directory and fill it with the right `.csv` files. It will catch invalid URLs. 
 
-Then, to run the map-shuffle-reduce job, which will create the output `result.csv` file, run
+Then, to run the map-shuffle-reduce job which will create the output `result.csv` file, run
 
 `python3 mapper.py | sort -k1,1 | python3 reducer.py`
 
