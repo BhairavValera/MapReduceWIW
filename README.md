@@ -2,7 +2,7 @@
 
 ## This is my completed coding challenge for When I Work.
 
-Before running the map-reduce job, be sure to run
+Before running the map-reduce files, be sure to run
 
 `pip install -r requirements.txt`
 
@@ -10,12 +10,12 @@ to install all dependencies. Note we only have one major dependency here (Pandas
 
 Next, run 
 
-`downloader.py`
+`python3 downloader.py --root_URL <URL>`
 
-which will create a `data_sources` directory and fill it with the right `.csv` files.
+which will create a `data_sources` directory and fill it with the right `.csv` files. It will catch invalid URLs. 
 
-Then, finally, run
+Then, to run the map-shuffle-reduce job, which will create the output `result.csv` file, run
 
-`map_reduce_job.py`
+`python3 mapper.py | sort -k1,1 | python3 reducer.py`
 
-to generate the result.
+`result.csv` is the file which contains per-user format data i.e. each row is a different user and the columns represent the time spent on each of the pages.
