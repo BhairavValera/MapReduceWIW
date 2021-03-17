@@ -1,7 +1,7 @@
 import urllib.request
 import os
 import argparse
-import time
+import ssl
 
 class Downloader:
     '''
@@ -15,12 +15,14 @@ class Downloader:
     
     def download(self):
         print('Beginning file downloads with urllib2...')
+        cwd = os.getcwd() #gets the current working directory
         for i in range(97, 123): #iterate through a-z ascii characters
             url = self.root_url + str(chr(i)) + '.csv'
             try:
-                urllib.request.urlretrieve(url, f'data_sources/{str(chr(i))}.csv')
+                file_save_path = os.path.join(cwd, f'data_sources/{str(chr(i))}.csv') #sets the path where file will be saved
+                urllib.request.urlretrieve(url, file_save_path)
             except urllib.error.URLError:
-                print("Not a valid url")
+                print(f"url {url} is not a valid url")
         print("Finished.")
 
 if __name__ == '__main__':
