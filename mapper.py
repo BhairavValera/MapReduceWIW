@@ -6,7 +6,7 @@ def _map():
     Goes through each file in data_sources/ and converts them into pandas data frames
     Each row of the data frame is accessed by its column name
     '''
-    for i in range(97, 123):
+    for i in range(97, 123): #iterate through a-z ascii characters
         file = f'{chr(i)}.csv'
         cwd = os.getcwd() #gets the current working directory
         path = os.path.join(cwd, 'data_sources', file)

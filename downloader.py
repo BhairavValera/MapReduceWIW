@@ -1,6 +1,7 @@
 import urllib.request
 import os
 import argparse
+import time
 
 class Downloader:
     '''
@@ -13,13 +14,14 @@ class Downloader:
         self.root_url = root_url
     
     def download(self):
-        for i in range(97, 123):
+        print('Beginning file downloads with urllib2...')
+        for i in range(97, 123): #iterate through a-z ascii characters
             url = self.root_url + str(chr(i)) + '.csv'
-            print('Beginning file download with urllib2...')
             try:
                 urllib.request.urlretrieve(url, f'data_sources/{str(chr(i))}.csv')
             except urllib.error.URLError:
                 print("Not a valid url")
+        print("Finished.")
 
 if __name__ == '__main__':
     '''
