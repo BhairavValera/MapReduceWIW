@@ -1,6 +1,5 @@
 import sys
 import os
-import pandas as pd
 
 def reduce():
     '''
@@ -34,16 +33,16 @@ def reduce():
     Sort the map such that the user ids go in ascending order.
     Also, sort the path names such that they are in alphabetical order
     '''
-    sorted_user_map = dict(sorted(user_map.items(), key=lambda item: item[0]))
-    result_data = pd.DataFrame.from_dict(sorted_user_map, orient='index').fillna(value=0)
-    result_data = result_data.reindex(sorted(result_data.columns), axis=1)
+    # sorted_user_map = dict(sorted(user_map.items(), key=lambda item: item[0]))
+    # result_data = pd.DataFrame.from_dict(sorted_user_map, orient='index').fillna(value=0)
+    # result_data = result_data.reindex(sorted(result_data.columns), axis=1)
 
     '''
     Write resulting pandas dataframe to CSV file
     '''
-    cwd = os.getcwd() #gets the current working directory
-    path = os.path.join(cwd, "result.csv") #create a path for the result file
-    result_data.to_csv(path) #write file
+    # cwd = os.getcwd() #gets the current working directory
+    # path = os.path.join(cwd, "result.csv") #create a path for the result file
+    # result_data.to_csv(path) #write file
 
 
 if __name__ == '__main__':

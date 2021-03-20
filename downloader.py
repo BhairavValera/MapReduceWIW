@@ -1,7 +1,6 @@
 import urllib.request
 import os
 import argparse
-import ssl
 
 class Downloader:
     '''
