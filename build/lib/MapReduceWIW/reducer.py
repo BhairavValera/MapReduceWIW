@@ -7,7 +7,6 @@ def reduce(user_map):
     with open(file_path, 'w') as csv_file:
         headers = [field for field, _ in list(user_map.items())[0][1].items()] #getting all path names
         headers.insert(0, 'user_id')
-        print(headers)
         writer = csv.DictWriter(csv_file, fieldnames=headers)
         writer.writeheader()
         for user_id, fields in user_map.items():

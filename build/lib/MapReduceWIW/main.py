@@ -21,8 +21,8 @@ def main():
     path = os.path.join(cwd, directory) #creates the new directory path
     try:
         print(f'Creating temporary file store...')
-        time.sleep(0.5)
         os.mkdir(path)
+        time.sleep(1)
         print(f'Done.')
     except OSError:
         print(f'Failed to create {directory} directory. It may already exist. Skipping this step...')
