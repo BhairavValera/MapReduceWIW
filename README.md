@@ -11,10 +11,12 @@ to install the package. Alternatively, to install from source, run
 
 `python3 setup.py install`
 
+View the distribution [here](https://pypi.org/project/MapReduceWIW/) 
+
 ### Step 2
 Run
 
-`MapReduceWIW --root_URL <Root URL>`
+`MapReduceWIW --root-url <Root URL>`
 
 which will run the map-shuffle-reduce job on data extracted from the root URL. After the job is completely finished, a `result.csv` file will be created in whatever directory the above command was run.
 
