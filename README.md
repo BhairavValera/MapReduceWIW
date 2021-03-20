@@ -5,7 +5,7 @@
 ### Step 1
 Run
 
-`pip install MapReduceWIW`
+`python3 -m pip install MapReduceWIW`
 
 to install the package. Alternatively, to install from source, run
 
