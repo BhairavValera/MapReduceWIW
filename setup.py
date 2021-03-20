@@ -7,7 +7,7 @@ long_desc = 'Package for running map-reduce jobs on WIW public data sets.'
 
 setup(
     name='MapReduceWIW',
-    version='1.0.0',
+    version='1.0.1',
     author='Bhairav Valera',
     author_email='bhairavvalera98@gmail.com',
     url='https://github.com/BhairavValera/MapReduceWIW',

@@ -9,9 +9,9 @@ def main():
     Parse command line arguments
     '''
     parser = argparse.ArgumentParser(description='MapReduce package for WIW data stored at a specific root URL')
-    parser.add_argument('--root_URL', dest='root_URL', action='store', help='The base URL of the file store', required=True)
+    parser.add_argument('--root-url', dest='root_url', action='store', help='The base URL of the file store', required=True)
     args = parser.parse_args()
-    root_url = args.root_URL
+    root_url = args.root_url
 
     '''
     Create a temporary cache to store downloaded files

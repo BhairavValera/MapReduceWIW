@@ -12,5 +12,5 @@ def reduce(user_map):
         for user_id, fields in user_map.items():
             row = {}
             row['user_id'] = user_id
-            row = {**row, **fields}
+            row = {**row, **fields} #merge dictionaries
             writer.writerow(row)
