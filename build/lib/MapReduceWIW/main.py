@@ -28,18 +28,19 @@ def main():
         print(f'Failed to create {directory} directory. It may already exist. Skipping this step...')
 
     downloader_ = downloader.Downloader(root_url) #instantiate data downloader object
-    downloader_.download() #call download
+    error = downloader_.download() #call download
 
-    '''
-    Run map-shuffle-reduce job
-    '''
-    print(f'Running map-shuffle-reduce job...')
-    user_map = {}
-    mapper.map(user_map) #map
-    user_map = shuffler.shuffle(user_map)
-    reducer.reduce(user_map) #reduce
-    time.sleep(1)
-    print(f'Done.')
+    if error is None: #nothing went wrong when downloading
+        '''
+        Run map-shuffle-reduce job
+        '''
+        print(f'Running map-shuffle-reduce job...')
+        user_map = {}
+        mapper.map(user_map) #map
+        user_map = shuffler.shuffle(user_map)
+        reducer.reduce(user_map) #reduce
+        time.sleep(1)
+        print(f'Done.')
 
     '''
     Clear the temporary file cache and remove the directory

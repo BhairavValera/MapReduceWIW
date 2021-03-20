@@ -1,6 +1,7 @@
 import urllib.request
 import os
 import string
+import sys
 
 class Downloader:
     '''
@@ -20,6 +21,7 @@ class Downloader:
             try:
                 file_save_path = os.path.join(cwd, f'data_sources/{c}.csv') #sets the path where file will be saved
                 urllib.request.urlretrieve(url, file_save_path)
-            except urllib.error.URLError:
-                print(f"url {url} is not a valid url")
+            except urllib.error.URLError as error:
+                print(f"Root url {self.root_url} is invalid or file url is invalid. Exiting...") 
+                return error
         print("Done.")
